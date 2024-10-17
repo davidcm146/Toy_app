@@ -1,0 +1,12 @@
+<% content_for :title, "Editing micropost" %>
+
+<h1>Editing micropost</h1>
+
+<%= render "form", micropost: @micropost %>
+
+<br>
+
+<div>
+  <%= link_to "Show this micropost", user_microposts_path(@user) %> |
+  <%= link_to "Back to microposts", user_microposts_path(@user) %>
+</div>

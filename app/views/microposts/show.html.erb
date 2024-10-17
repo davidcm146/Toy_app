@@ -1,0 +1,12 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @micropost %>
+
+<div>
+  <%= link_to "Edit this micropost", edit_user_micropost_path(@user, @micropost) %> |
+  <%= link_to "Back to microposts", user_microposts_path(@user) %>
+  <%= link_to 'Delete', user_micropost_path(@user, @micropost), 
+                    method: :delete, 
+                    data: { confirm: 'Are you sure you want to delete this micropost?' } %>
+
+</div>

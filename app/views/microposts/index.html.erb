@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Microposts" %>
+
+<h1><%= @user.name %>'s Microposts</h1>
+
+<%= link_to 'New Micropost', new_user_micropost_path(@user) %>
+
+<% if @microposts.any? %>
+  <% @microposts.each do |micropost| %>
+    <div class="micropost">
+      <h3><%= link_to micropost.user_id, user_micropost_path(@user, micropost) %></h3>
+      <p><%= micropost.content %></p>
+      <p><small>Posted on <%= micropost.created_at.strftime("%B %d, %Y") %></small></p>
+      <%= link_to 'Edit', edit_user_micropost_path(@user, micropost) %>
+      <%= link_to 'Back', user_path(@user) %>
+    </div>
+  <% end %>
+<% else %>
+  <p>No microposts found for this user.</p>
+<% end %>
+
